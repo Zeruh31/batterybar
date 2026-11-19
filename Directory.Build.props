@@ -1,0 +1,23 @@
+<Project>
+  <PropertyGroup>
+    <LangVersion>12.0</LangVersion>
+    <Product>BatteryBar</Product>
+    <Authors>Zeruh31</Authors>
+    <Copyright>Copyright (c) 2026 Zeruh31</Copyright>
+    <Version>1.0.0</Version>
+    <!-- Keep machine-specific paths out of the binaries: source paths become /_/...,
+         including in the Source Link map that the SDK adds to the PDB. -->
+    <Deterministic>true</Deterministic>
+    <DeterministicSourcePaths>true</DeterministicSourcePaths>
+  </PropertyGroup>
+
+  <!-- Map the repository root to /_/ explicitly as well: Source Link only derives the mapping from git
+       metadata, which is missing in a repository without commits or in a source archive. -->
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <PathMap>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)'))=/_/</PathMap>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(GITHUB_ACTIONS)' == 'true'">
+    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+  </PropertyGroup>
+</Project>
