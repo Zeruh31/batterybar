@@ -119,8 +119,9 @@ Details: [docs/flydigi-protocol.md](docs/flydigi-protocol.md). The same protocol
 
 ## Known limitations
 
-- **Flydigi in F310 mode:** the receiver sometimes enumerates as a Logitech F310 (`046D:C21D`, XInput only).
-  That mode has no vendor interface, so the battery cannot be read and the gamepad cell stays `--`.
+- **Flydigi receiver not present:** the battery is read through the 2.4G receiver's vendor interface
+  (`37D7:2401`, `MI_01`). If the receiver is unplugged or the controller is in another connection mode,
+  the gamepad cell stays `--`.
 - **Only horizontal taskbars at the bottom of the screen** are supported. With an auto-hiding taskbar the
   widget hides while the taskbar is hidden.
 - **Bluetooth was not tested**, for Logitech or Flydigi; only the receivers and dongles listed above.
@@ -222,7 +223,7 @@ Kurulum: [Releases](../../releases) sayfasından `BatteryBar-<sürüm>-win-x64.e
 çalıştırın; .NET kurmak gerekmez. Exe imzasız olduğu için SmartScreen uyarısında **Ek bilgi > Yine de
 çalıştır** deyin.
 
-Bilinen sınırlar: Flydigi alıcısı F310 modunda görünürse kol pili okunamaz; yalnız ekranın altındaki yatay
+Bilinen sınırlar: Flydigi kolunun pili yalnız 2.4G alıcı takılıyken okunur; yalnız ekranın altındaki yatay
 görev çubuğu desteklenir; Bluetooth test edilmedi.
 
 Bu proje Logitech ya da Flydigi ile bağlantılı değildir; markalar sahiplerine aittir.

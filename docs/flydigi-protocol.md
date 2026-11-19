@@ -88,5 +88,4 @@ Example answer (MAC zeroed):
   "not connected" or "unknown".
 - The charging and full states were not seen on real hardware; the decoder follows the encoding above.
 - Bluetooth mode was not tested; only the 2.4G receiver.
-- Sometimes the receiver enumerates as a Logitech F310 (`046D:C21D`, XInput only). In that mode there is no
-  vendor interface and the battery cannot be read.
+- Only the 2.4G receiver's vendor interface is used; without the receiver the battery cannot be read.
